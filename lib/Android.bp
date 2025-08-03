@@ -9,7 +9,6 @@ android_app {
         "res",
     ],
     manifest: "AndroidManifest.xml",
-    system_ext_specific: true,
 
     optimize: {
         enabled: false,
