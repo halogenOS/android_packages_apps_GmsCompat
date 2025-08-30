@@ -21,6 +21,13 @@ Passkeys__client_data_hash_override_for_security_keys true
 # controls access to privileged StatsManager#getRegisteredExperimentIds()
 add_external_experiment_ids false
 
+[com.google.android.gms.advancedprotection#com.google.android.gms]
+# disable Advanced Protection, as privileged permissions are needed to enable advanced protection
+# via the AdvancedProtectionService. Many of the device protection features are already implemented
+# in GrapheneOS.
+45673629 false
+AdvancedProtection__enable_titanium_enrollment_notification false
+
 [com.google.android.gms.nearby]
 # disable WearableDataListenerService, it needs privileged permissions
 FastPairFeature__enable_wearable_service false
@@ -213,6 +220,7 @@ logDialogShown void
 
 [android.security.keystore.recovery.RecoveryController]
 initRecoveryService void
+setServerParams void
 
 [android.telecom.TelecomManager]
 getAllPhoneAccountHandles emptyList
