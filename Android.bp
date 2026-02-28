@@ -26,7 +26,6 @@ android_app {
     jarjar_rules: "jarjar-rules.txt",
 
     manifest: "AndroidManifest.xml",
-    system_ext_specific: true,
 
     required: [
         "GmsCompatConfig",
@@ -41,7 +40,6 @@ prebuilt_etc {
     src: "etc/default-permissions/app.grapheneos.gmscompat.xml",
     sub_dir: "default-permissions",
     filename_from_src: true,
-    system_ext_specific: true,
 }
 
 prebuilt_etc {
@@ -49,5 +47,4 @@ prebuilt_etc {
     src: "etc/sysconfig/app.grapheneos.gmscompat.xml",
     sub_dir: "sysconfig",
     filename_from_src: true,
-    system_ext_specific: true,
 }
