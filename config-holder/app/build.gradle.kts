@@ -14,13 +14,13 @@ java {
 android {
     namespace = "app.grapheneos.gmscompat.config"
 
-    compileSdk = 36
-    buildToolsVersion = "36.1.0"
+    compileSdk = 37
+    buildToolsVersion = "37.0.0"
 
     defaultConfig {
         minSdk = 32
-        targetSdk = 36
-        versionCode = 169
+        targetSdk = 37
+        versionCode = 170
         versionName = versionCode.toString()
     }
 
