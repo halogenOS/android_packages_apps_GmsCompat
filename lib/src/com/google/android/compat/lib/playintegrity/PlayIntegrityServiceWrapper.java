@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib.playintegrity;
+package com.google.android.compat.lib.playintegrity;
 
 import android.annotation.Nullable;
 import android.content.Context;
@@ -16,7 +16,7 @@ import com.android.internal.gmscompat.GmsCompatApp;
 import com.android.internal.os.BackgroundThread;
 
 import static android.app.compat.gms.GmsCompat.appContext;
-import static app.grapheneos.gmscompat.lib.playintegrity.PlayIntegrityUtils.isPlayIntegrityBlocked;
+import static com.google.android.compat.lib.playintegrity.PlayIntegrityUtils.isPlayIntegrityBlocked;
 
 abstract class PlayIntegrityServiceWrapper extends BinderWrapper {
     final String TAG;

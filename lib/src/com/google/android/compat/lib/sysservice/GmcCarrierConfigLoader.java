@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib.sysservice;
+package com.google.android.compat.lib.sysservice;
 
 import android.os.IBinder;
 import android.os.PersistableBundle;

@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib.playintegrity;
+package com.google.android.compat.lib.playintegrity;
 
 import android.os.Binder;
 import android.os.Bundle;

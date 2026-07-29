@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib.sysservice;
+package com.google.android.compat.lib.sysservice;
 
 import android.app.ActivityManager;
 import android.app.ActivityThread;
@@ -17,8 +17,8 @@ import com.android.internal.telephony.ICarrierConfigLoader;
 
 import java.util.function.Function;
 
-import app.grapheneos.gmscompat.lib.GmsCompatLibImpl;
-import app.grapheneos.gmscompat.lib.sysservice.client.ClientServiceOverridesRegistry;
+import com.google.android.compat.lib.GmsCompatLibImpl;
+import com.google.android.compat.lib.sysservice.client.ClientServiceOverridesRegistry;
 
 public class SystemServiceOverridesRegistry {
 

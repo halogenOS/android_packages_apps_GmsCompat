@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib.sysservice.client;
+package com.google.android.compat.lib.sysservice.client;
 
 import android.app.AppGlobals;
 import android.app.ContentProviderHolder;

@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib.sysservice.client;
+package com.google.android.compat.lib.sysservice.client;
 
 import android.app.IActivityManager;
 import android.content.pm.IPackageManager;

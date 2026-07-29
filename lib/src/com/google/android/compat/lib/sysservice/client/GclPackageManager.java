@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib.sysservice.client;
+package com.google.android.compat.lib.sysservice.client;
 
 import android.app.ActivityThread;
 import android.content.pm.ApplicationInfo;
@@ -12,7 +12,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
-import app.grapheneos.gmscompat.lib.util.Certs;
+import com.google.android.compat.lib.util.Certs;
 
 class GclPackageManager extends IPackageManager.Stub.Proxy {
     static final String TAG = "GclPackageManager";

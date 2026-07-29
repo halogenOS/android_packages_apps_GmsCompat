@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib.playintegrity;
+package com.google.android.compat.lib.playintegrity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.os.IBinder;
 
 import java.util.function.UnaryOperator;
 
-import app.grapheneos.gmscompat.lib.util.ServiceConnectionWrapper;
+import com.google.android.compat.lib.util.ServiceConnectionWrapper;
 
 import static android.app.compat.gms.GmsCompat.appContext;
 

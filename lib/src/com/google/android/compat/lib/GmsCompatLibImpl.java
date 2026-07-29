@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib;
+package com.google.android.compat.lib;
 
 import android.annotation.Nullable;
 import android.app.appsearch.safeparcel.SafeParcelReader;
@@ -22,9 +22,9 @@ import java.text.ParseException;
 import java.util.Arrays;
 import java.util.function.Function;
 
-import app.grapheneos.gmscompat.lib.playintegrity.PlayIntegrityUtils;
-import app.grapheneos.gmscompat.lib.sysservice.SystemServiceOverridesRegistry;
-import app.grapheneos.gmscompat.lib.util.BinderUtils;
+import com.google.android.compat.lib.playintegrity.PlayIntegrityUtils;
+import com.google.android.compat.lib.sysservice.SystemServiceOverridesRegistry;
+import com.google.android.compat.lib.util.BinderUtils;
 
 /**
  * GmsCompatLibrary code is loaded into processes of apps that use GmsCompat.

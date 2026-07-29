@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib.sysservice.client;
+package com.google.android.compat.lib.sysservice.client;
 
 import android.annotation.NonNull;
 import android.annotation.Nullable;
@@ -20,7 +20,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 
-import app.grapheneos.gmscompat.lib.util.BaseIContentProvider;
+import com.google.android.compat.lib.util.BaseIContentProvider;
 
 // This provider prevents crashes of apps that depend on GmsCore font provider when GmsCore is
 // missing or disabled.

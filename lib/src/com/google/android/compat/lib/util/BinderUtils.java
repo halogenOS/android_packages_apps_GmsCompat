@@ -1,4 +1,4 @@
-package app.grapheneos.gmscompat.lib.util;
+package com.google.android.compat.lib.util;
 
 import android.annotation.Nullable;
 import android.os.IBinder;
