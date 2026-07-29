@@ -1,5 +1,5 @@
 android_app {
-    name: "GmsCompat",
+    name: "Talk",
     platform_apis: true,
     srcs: [
         "src/**/*.java",
@@ -38,8 +38,8 @@ android_app {
     manifest: "AndroidManifest.xml",
 
     required: [
-        "GmsCompatConfig",
-        "GmsCompatLib",
+        "GoogleVoice",
+        "CarHome",
         "etc_default-permissions_app.grapheneos.gmscompat.xml",
         "etc_sysconfig_app.grapheneos.gmscompat.xml",
     ],

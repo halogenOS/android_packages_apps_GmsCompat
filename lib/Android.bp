@@ -1,5 +1,5 @@
 android_app {
-    name: "GmsCompatLib",
+    name: "CarHome",
     platform_apis: true,
     certificate: "gmscompat_lib",
     srcs: [
