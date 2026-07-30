@@ -6,7 +6,6 @@ import android.content.pm.GosPackageState;
 import android.content.pm.GosPackageStateFlag;
 import android.ext.settings.app.AswBlockPlayIntegrityApi;
 import android.os.Binder;
-import android.os.BinderWrapper;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
@@ -14,11 +13,12 @@ import android.util.Log;
 
 import com.android.internal.gmscompat.GmsCompatApp;
 import com.android.internal.os.BackgroundThread;
+import com.google.android.compat.lib.util.GmsBinderWrapper;
 
 import static android.app.compat.gms.GmsCompat.appContext;
 import static com.google.android.compat.lib.playintegrity.PlayIntegrityUtils.isPlayIntegrityBlocked;
 
-abstract class PlayIntegrityServiceWrapper extends BinderWrapper {
+abstract class PlayIntegrityServiceWrapper extends GmsBinderWrapper {
     final String TAG;
     protected int requestIntegrityTokenTxnCode;
 
