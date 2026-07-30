@@ -2,7 +2,6 @@ package com.google.android.compat.lib.sysservice.client;
 
 import android.annotation.NonNull;
 import android.annotation.Nullable;
-import android.app.compat.gms.GmsCompat;
 import android.content.AttributionSource;
 import android.content.pm.ProviderInfo;
 import android.content.res.AssetFileDescriptor;
@@ -33,7 +32,7 @@ public class ShimGmsFontProvider extends BaseIContentProvider {
         res.packageName = PackageId.GMS_CORE_NAME;
         res.name = AUTHORITY;
         res.authority = AUTHORITY;
-        res.applicationInfo = GmsCompat.appContext().getApplicationInfo();
+        res.applicationInfo = com.google.android.compat.lib.util.LibContext.app.getApplicationInfo();
         res.applicationInfo.packageName = res.packageName;
         return res;
     }

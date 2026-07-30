@@ -35,6 +35,7 @@ public class GmsCompatLibImpl implements IGmsCompatLib {
     @Override
     public void init(Context appContext, Context libContext, String processName) {
         Log.d(TAG, "init: pkg: " + appContext.getPackageName() + ", process: " + processName);
+        com.google.android.compat.lib.util.LibContext.app = appContext;
         SystemServiceOverridesRegistry.init(appContext, binderProxyOverridesRegistry);
     }
 

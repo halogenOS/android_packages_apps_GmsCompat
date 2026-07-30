@@ -3,7 +3,6 @@ package com.google.android.compat.lib.sysservice;
 import android.app.ForegroundServiceStartNotAllowedException;
 import android.app.IActivityManager;
 import android.app.IApplicationThread;
-import android.app.compat.gms.GmsCompat;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.IBinder;
@@ -36,7 +35,7 @@ class GmcActivityManager extends IActivityManager.Stub.Proxy {
     private static void raiseSelfToForeground(Intent service, boolean requireForeground) {
         Log.d(TAG, "unable to start " + service + ", requireForeground: " + requireForeground);
         String reason = "GmsCompat: " + service + ", requireForeground: " + requireForeground;
-        GmsCompatApp.raisePackageToForeground(GmsCompat.appContext().getPackageName(),
+        GmsCompatApp.raisePackageToForeground(com.google.android.compat.lib.util.LibContext.app.getPackageName(),
                                 30_000, reason, android.os.PowerExemptionManager.REASON_OTHER);
     }
 }

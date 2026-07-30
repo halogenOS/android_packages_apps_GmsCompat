@@ -3,8 +3,6 @@ package com.google.android.compat.lib.playintegrity;
 import android.annotation.Nullable;
 import android.content.Context;
 import android.content.pm.GosPackageState;
-import android.content.pm.GosPackageStateFlag;
-import android.ext.settings.app.AswBlockPlayIntegrityApi;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.Parcel;
@@ -15,7 +13,6 @@ import com.android.internal.gmscompat.GmsCompatApp;
 import com.android.internal.os.BackgroundThread;
 import com.google.android.compat.lib.util.GmsBinderWrapper;
 
-import static android.app.compat.gms.GmsCompat.appContext;
 import static com.google.android.compat.lib.playintegrity.PlayIntegrityUtils.isPlayIntegrityBlocked;
 
 abstract class PlayIntegrityServiceWrapper extends GmsBinderWrapper {
@@ -41,14 +38,19 @@ abstract class PlayIntegrityServiceWrapper extends GmsBinderWrapper {
 
     private void onIntegrityTokenRequest(boolean isBlocked) {
         Runnable r = () -> {
-            Context ctx = appContext();
+            Context ctx = com.google.android.compat.lib.util.LibContext.app;
             GosPackageState gosPs = GosPackageState.getForSelf(ctx);
-            if (!gosPs.hasFlag(GosPackageStateFlag.PLAY_INTEGRITY_API_USED_AT_LEAST_ONCE)) {
+            if (!gosPs.hasFlag(com.google.android.compat.lib.util.LibContext
+                    .FLAG_PLAY_INTEGRITY_API_USED_AT_LEAST_ONCE)) {
                 gosPs.createEditor(ctx.getPackageName(), ctx.getUser())
-                        .addFlag(GosPackageStateFlag.PLAY_INTEGRITY_API_USED_AT_LEAST_ONCE)
+                        .addFlag(com.google.android.compat.lib.util.LibContext
+                                .FLAG_PLAY_INTEGRITY_API_USED_AT_LEAST_ONCE)
                         .apply();
             }
-            if (!AswBlockPlayIntegrityApi.I.isNotificationEnabled(gosPs)) {
+            // Mirror of AswBlockPlayIntegrityApi.I.isNotificationEnabled():
+            // suppressed when the user chose "don't show again".
+            if (gosPs.hasFlag(com.google.android.compat.lib.util.LibContext
+                    .FLAG_SUPPRESS_PLAY_INTEGRITY_API_NOTIF)) {
                 return;
             }
             try {

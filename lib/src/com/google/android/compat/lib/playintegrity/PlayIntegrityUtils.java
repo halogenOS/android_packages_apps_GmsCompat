@@ -5,14 +5,11 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.GosPackageState;
 import android.ext.PackageId;
-import android.ext.settings.app.AswBlockPlayIntegrityApi;
 import android.os.IBinder;
 
 import java.util.function.UnaryOperator;
 
 import com.google.android.compat.lib.util.ServiceConnectionWrapper;
-
-import static android.app.compat.gms.GmsCompat.appContext;
 
 public class PlayIntegrityUtils {
     private static final String TAG = "PlayIntegrityUtils";
@@ -41,7 +38,14 @@ public class PlayIntegrityUtils {
     }
 
     static boolean isPlayIntegrityBlocked() {
-        Context ctx = appContext();
-        return AswBlockPlayIntegrityApi.I.get(ctx, ctx.getUserId(), ctx.getApplicationInfo(), GosPackageState.getForSelf(ctx));
+        // Mirror of android.ext.settings.app.AswBlockPlayIntegrityApi.I.get():
+        // default is "not blocked"; the per-app switch sets the
+        // BLOCK_PLAY_INTEGRITY_API GosPackageState flag. That class (and the
+        // flag constants) are not part of the exposed API surface, so they
+        // cannot be referenced directly from this library's classloader
+        // domain.
+        Context ctx = com.google.android.compat.lib.util.LibContext.app;
+        return GosPackageState.getForSelf(ctx)
+                .hasFlag(com.google.android.compat.lib.util.LibContext.FLAG_BLOCK_PLAY_INTEGRITY_API);
     }
 }
