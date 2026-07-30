@@ -9,7 +9,6 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.util.Log;
 
-import com.android.internal.gmscompat.GmsCompatApp;
 import com.android.internal.os.BackgroundThread;
 import com.google.android.compat.lib.util.GmsBinderWrapper;
 
@@ -54,9 +53,10 @@ abstract class PlayIntegrityServiceWrapper extends GmsBinderWrapper {
                 return;
             }
             try {
-                GmsCompatApp.iClientOfGmsCore2Gca().showPlayIntegrityNotification(ctx.getPackageName(), isBlocked);
-            } catch (RemoteException e) {
-                Log.e(TAG, "", e);
+                PiNotifier.show(ctx, isBlocked);
+            } catch (Throwable t) {
+                // The notification must never break the integrity flow itself.
+                Log.e(TAG, "", t);
             }
         };
         BackgroundThread.getHandler().post(r);
